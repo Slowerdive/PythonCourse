@@ -12,14 +12,12 @@ def read_file(path: str) -> str:
 
 
 def get_employees_info() -> list[str]:
-    """Внешнее апи, которое возвращает вам список строк с данными по сотрудникам."""
     return read_file(os.path.join(
         BASE_DIR, '1_task', 'input_data.txt',
     )).split(SPLIT_SYMBOL)
 
 
 def get_parsed_employees_info() -> list[dict[str, int | str]]:
-    """Функция парсит данные, полученные из внешнего API и приводит их к стандартизированному виду."""
     employee_lines = get_employees_info()
     parsed_employees_info = []
 
