@@ -20,6 +20,19 @@ def get_wrong_article() -> str:
 
 def recover_article() -> str:
     wrong_article = get_wrong_article()
+    lines = wrong_article.split('\n')
+    fixed_article = []
 
-    # Ваш код ниже, возвращайте уже отредактированный текст!
+    for line in lines:
+        line_reversed = line[::-1]
+        content_length = len(line_reversed) // 2
+        sentence = line_reversed[content_length + 1:]
+        sentence = sentence.replace('WOOF-WOOF', 'cat')
+        if sentence:
+            sentence = sentence.capitalize() + '.'
+
+        fixed_article.append(sentence)
+
+    correct_article = '\n'.join(fixed_article)
+    wrong_article = correct_article
     return wrong_article
