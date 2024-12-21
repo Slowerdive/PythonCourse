@@ -1,10 +1,9 @@
 import csv
 import time
+from abc import ABC, abstractmethod
 
-class BaseFileHandler:
-    def __init__(self, filepath, expected_extension):
-        if not filepath.endswith(expected_extension):
-            raise ValueError(f"Файл должен иметь расширение '{expected_extension}'")
+class BaseFileHandler(ABC):
+    def __init__(self, filepath):
         self.filepath = filepath
         self._initialize_file()
 
@@ -15,13 +14,14 @@ class BaseFileHandler:
         except FileExistsError:
             pass
 
+    @abstractmethod
     def append_data(self, records):
-        raise NotImplementedError("Метод append_data должен быть переопределён в подклассе")
+        pass
 
 
 class TxtHandler(BaseFileHandler):
     def __init__(self, filepath):
-        super().__init__(filepath, '.txt')
+        super().__init__(filepath)
 
     def append_data(self, records):
         with open(self.filepath, "a", newline="") as file:
@@ -32,7 +32,7 @@ class TxtHandler(BaseFileHandler):
 
 class CsvHandler(BaseFileHandler):
     def __init__(self, filepath):
-        super().__init__(filepath, '.csv')
+        super().__init__(filepath)
         if not self._file_exists_or_empty():
             self._initialize_csv_file()
 
@@ -88,8 +88,12 @@ class Statsd:
 
 
 def get_txt_statsd(filepath, buffer_max=10):
+    if not filepath.endswith('.txt'):
+        raise ValueError("Файл должен иметь расширение '.txt'")
     return Statsd(buffer_max, TxtHandler(filepath))
 
 
 def get_csv_statsd(filepath, buffer_max=10):
+    if not filepath.endswith('.csv'):
+        raise ValueError("Файл должен иметь расширение '.csv'")
     return Statsd(buffer_max, CsvHandler(filepath))
