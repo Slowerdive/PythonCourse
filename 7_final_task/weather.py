@@ -1,10 +1,10 @@
 import requests
 from datetime import datetime, timedelta
 import pytz
-from location import get_location  # Импорт функции для определения местоположения
+from location import get_location
 
 def get_weather(city: str):
-    api_key = '9dffb8fc5b389b94f248c1230a538272'  # Ваш API-ключ
+    api_key = '9dffb8fc5b389b94f248c1230a538272' 
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric&lang=ru"
 
     try:
