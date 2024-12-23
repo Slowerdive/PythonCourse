@@ -17,9 +17,9 @@
 
 2. Скачайте проект
 Скачайте архив с проектом или клонируйте его с помощью Git:<br>
-git clone https://github.com/Slowerdive/PythonCourse.git<br>
+```git clone https://github.com/Slowerdive/PythonCourse.git```<br>
 После этого вы сможете перейти в нужную папку, содержащую проект:<br>
-cd PythonCourse/7_final_task
+```cd PythonCourse/7_final_task```
 
 4. Установите необходимые библиотеки
 Для работы программы потребуются следующие библиотеки Python:<br>
