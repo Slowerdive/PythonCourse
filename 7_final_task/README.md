@@ -25,6 +25,7 @@ cd PythonCourse/7_final_task
 Для работы программы потребуются следующие библиотеки Python:
 requests
 pytz
+
 Установите их командой в терминале:
 pip install requests pytz
 
