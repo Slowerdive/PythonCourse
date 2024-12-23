@@ -26,15 +26,15 @@
 requests<br>
 pytz<br>
 Установите их командой в терминале:<br>
-pip install requests pytz
+```pip install requests pytz```
 
 4. Получите API-ключ для OpenWeatherMap<br>
 Зарегистрируйтесь на сайте OpenWeatherMap и получите API-ключ. Вставьте этот ключ в файл weather.py, заменив строку:<br>
-api_key = 'Ваш API-ключ'
+```api_key = 'Ваш API-ключ'```
 
 6. Запустите программу
 В терминале перейдите в папку с проектом и выполните команду:<br>
-python main.py
+```python main.py```
 
 Программа предложит вам выбрать одно из действий:
 1. Указать город для получения погоды.
