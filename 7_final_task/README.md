@@ -21,7 +21,7 @@
 После этого вы сможете перейти в нужную папку, содержащую проект:<br>
 ```cd PythonCourse/7_final_task```
 
-3. Установите зависимости:
+3. Установите зависимости:<br>
 ```pip install -r requirements.txt```
 
 4. Получите API-ключ для OpenWeatherMap<br>
