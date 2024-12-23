@@ -22,11 +22,10 @@ git clone https://github.com/Slowerdive/PythonCourse.git<br>
 cd PythonCourse/7_final_task
 
 4. Установите необходимые библиотеки
-Для работы программы потребуются следующие библиотеки Python:
-requests
-pytz
-
-Установите их командой в терминале:
+Для работы программы потребуются следующие библиотеки Python:<br>
+requests<br>
+pytz<br>
+Установите их командой в терминале:<br>
 pip install requests pytz
 
 4. Получите API-ключ для OpenWeatherMap<br>
